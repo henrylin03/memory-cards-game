@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--secondary-colour);
+}
+
+header>.left {
+  flex: 4;
+}
+
+.explanation {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  margin-top: 12px;
+}
+
+h1 {
+  font-weight: normal;
+}
