@@ -1,35 +1,77 @@
 import { useState } from "react";
-import "../styles/gameboard.css";
 import Card from "./Card";
+import "../styles/gameboard.css";
 
 const getRandomId = (maxId = 150) => Math.floor(Math.random() * maxId + 1);
 
+// schwartzian transform
+const shuffleElements = (array) =>
+  array
+    .map((element) => ({ element, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ element }) => element);
+
+const randomlySelectElements = (array, elementsCount) => {
+  const shuffledArray = shuffleElements(array);
+  return shuffledArray.slice(0, elementsCount);
+};
+
 export default function Gameboard({ incrementScore, resetScore }) {
+  const TOTAL_IDS = 10;
   const [pokemonIds, setPokemonIds] = useState(getRandomPokemonIds());
-  const [selectedPokemonIds, setSelectedPokemonIds] = useState(() => new Set());
+  const [selectedPokemonIds, setSelectedPokemonIds] = useState(new Set());
 
   function getRandomPokemonIds() {
-    let ids = new Set();
-    for (let i = 0; i < 10; i++) {
+    let ids = [];
+    for (let i = 0; i < TOTAL_IDS; i++) {
       let randomId = getRandomId();
-      while (ids.has(randomId)) randomId = getRandomId();
-      ids.add(randomId);
+      while (ids.includes(randomId)) randomId = getRandomId();
+      ids.push(randomId);
     }
 
     return [...ids];
   }
 
+  function regeneratePokemonIds(selectedPokemonId) {
+    const MAX_IDS_OF_POKEMONS_ALREADY_SELECTED = 5;
+    let pokemonIds = [];
+
+    // need to add 1 because selectedPokemonIds state has not updated yet here
+    if (selectedPokemonIds.size + 1 > MAX_IDS_OF_POKEMONS_ALREADY_SELECTED) {
+      const randomlyChosenIdsAlreadySelectedByPlayer = randomlySelectElements(
+        [...selectedPokemonIds],
+        MAX_IDS_OF_POKEMONS_ALREADY_SELECTED
+      );
+
+      pokemonIds = [
+        selectedPokemonId,
+        ...randomlyChosenIdsAlreadySelectedByPlayer,
+      ];
+    } else pokemonIds = [...selectedPokemonIds, selectedPokemonId];
+
+    let idsCount = pokemonIds.length;
+    while (idsCount < TOTAL_IDS) {
+      let randomId = getRandomId();
+      while (pokemonIds.includes(randomId)) randomId = getRandomId();
+      pokemonIds.push(randomId);
+      idsCount++;
+    }
+
+    return shuffleElements(pokemonIds);
+  }
+
+  // handlers
   function handleCardSelection(pokemonId) {
     if (selectedPokemonIds.has(pokemonId)) {
       resetScore();
-      alert("this pokemon has been selected before. you lose.");
-      setSelectedPokemonIds(() => new Set());
+      alert("This Pokemon has been selected before. New round commencing!");
+      setSelectedPokemonIds(new Set());
+      setPokemonIds(getRandomPokemonIds());
     } else {
-      setSelectedPokemonIds(() => new Set(selectedPokemonIds).add(pokemonId));
       incrementScore();
+      setPokemonIds(regeneratePokemonIds(pokemonId));
+      setSelectedPokemonIds(() => new Set(selectedPokemonIds).add(pokemonId));
     }
-
-    setPokemonIds(getRandomPokemonIds());
   }
 
   const gameCards = pokemonIds.map((pokemonId) => (
@@ -42,9 +84,3 @@ export default function Gameboard({ incrementScore, resetScore }) {
 
   return <section className="gameboard">{gameCards}</section>;
 }
-
-/* HOW THE GAME WILL WORK (ROUGHLY) */
-// there is a list of pokemon ids initially
-// when a user clicks (mousedown) on a card, that pokemon's id is logged in a state, and all pokemons are shuffled (position (index in pokemonIds) cannot be the same).
-// if that pokemon id has already been clicked before, the score resets. if not selected yet, the score is incremented. if then this is a new high score, then the high score reflects that too.
-// when the new 10 pokemons are shown, max 5 (half of total cards shown) cards that the user has selected. in the future, if we let the user choose the difficulty level, then a higher proportion (up to 9 out of 10) cards will be ones the user has selected.
