@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/card.css";
 
-export default function Card({ id }) {
+export default function Card({ id, handleCardSelection }) {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonImageUrl, setPokemonImageUrl] = useState("");
 
@@ -15,7 +15,7 @@ export default function Card({ id }) {
   }, [id]);
 
   return (
-    <button className="card">
+    <button className="card" onMouseDown={() => handleCardSelection(id)}>
       <figure>
         <img src={pokemonImageUrl} alt={`image of ${pokemonName}`} />
       </figure>
