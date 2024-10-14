@@ -1,12 +1,12 @@
 import "../styles/scoreboard.css";
 
-export default function Scoreboard() {
+export default function Scoreboard({ currentScore, highScore }) {
   return (
     <article className="scoreboard">
       <p className="label">score:</p>
-      <p className="score">0</p>
+      <p className="score">{currentScore}</p>
       <p className="label">high score:</p>
-      <p className="highScore">6</p>
+      <p className="highScore">{highScore}</p>
     </article>
   );
 }

@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const getRandomId = (maxId = 150) => Math.floor(Math.random() * maxId + 1);
 
-export default function Gameboard() {
+export default function Gameboard({ incrementScore, resetScore }) {
   const [pokemonIds, setPokemonIds] = useState(getRandomPokemonIds());
   const [selectedPokemonIds, setSelectedPokemonIds] = useState(() => new Set());
 
@@ -21,10 +21,13 @@ export default function Gameboard() {
 
   function handleCardSelection(pokemonId) {
     if (selectedPokemonIds.has(pokemonId)) {
+      resetScore();
       alert("this pokemon has been selected before. you lose.");
       setSelectedPokemonIds(() => new Set());
-    } else
+    } else {
       setSelectedPokemonIds(() => new Set(selectedPokemonIds).add(pokemonId));
+      incrementScore();
+    }
 
     setPokemonIds(getRandomPokemonIds());
   }
