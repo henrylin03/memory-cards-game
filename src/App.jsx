@@ -20,7 +20,7 @@ function App() {
     <>
       <header>
         <div className="left">
-          <h1>Pokemems</h1>
+          <h1>Pokémems</h1>
           <p className="explanation">
             Earn points by clicking on a Pokemon... but don&apos;t click on any
             of them more than once!
