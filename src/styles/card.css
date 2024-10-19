@@ -22,7 +22,7 @@
   width: 200px;
 }
 
-.card:hover {
+.card:not([disabled]):hover {
   box-shadow: 0 0 44px 8px var(--secondary-colour);
   transform: scale(1.1);
 }
