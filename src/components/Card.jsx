@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SpinningPokeball from "./SpinningPokeball";
 import "../styles/card.css";
 
 export default function Card({ id, handleCardSelection }) {
@@ -11,9 +12,9 @@ export default function Card({ id, handleCardSelection }) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((results) => results.json())
       .then((data) => {
+        setIsLoading(false);
         setPokemonName(data.name);
         setPokemonImageUrl(data.sprites.front_default);
-        setIsLoading(false);
       });
   }, [id]);
 
@@ -21,10 +22,14 @@ export default function Card({ id, handleCardSelection }) {
 
   return (
     <button className="card" onMouseDown={handleMouseDown} disabled={isLoading}>
-      <figure>
-        <img src={pokemonImageUrl} alt={`image of ${pokemonName}`} />
-      </figure>
-      <p>{pokemonName}</p>
+      {isLoading ? (
+        <SpinningPokeball />
+      ) : (
+        <figure>
+          <img src={pokemonImageUrl} alt={`image of ${pokemonName}`} />
+        </figure>
+      )}
+      <p>{isLoading ? "pokemon" : pokemonName}</p>
     </button>
   );
 }

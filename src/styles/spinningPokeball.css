@@ -1,0 +1,21 @@
+.card>.pokeballWrapper {
+  background-color: rgba(255, 255, 255, 0.4)
+}
+
+.card .pokeball {
+  width: 25%;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid;
+  animation: frames .8s linear 0s infinite;
+}
+
+@keyframes frames {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

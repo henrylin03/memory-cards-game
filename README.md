@@ -39,9 +39,8 @@ This project is part of [The Odin Project's](https://www.theodinproject.com/) "F
 
 ### Built with
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=html5&logoColor=black)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=fbc924)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=fbc924)](https://vite.dev/)
 
 <!-- CONTRIBUTING -->
 
@@ -57,7 +56,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Acknowledgements
 
-- [PokéAPI](https://pokeapi.co/) for having the most comprehensive Pokémon dataset with an easily accessible, free, open-source, RESTful API
+- [PokéAPI](https://pokeapi.co/) for providing the free Pokémon dataset through a RESTful API
+- [Vincenzo Bianco](https://codepen.io/vinztt/pen/XjEyvZ) for the spinning Pokeball animation when a card is being loaded
+- [Muhammad Jazman](https://www.iconfinder.com/icons/1703899/ball_master_pocket_pocket_monster_icon) for the static Masterball image file when a card is being loaded
 - [draw.io](https://app.diagrams.net/) for its free wireframing tools
 - [Coolors](https://coolors.co/) for comprehensive colour palettes
 - [favicon.io](https://favicon.io) for generating the favicons

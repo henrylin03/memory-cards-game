@@ -11,10 +11,8 @@ const shuffleElements = (array) =>
     .sort((a, b) => a.sort - b.sort)
     .map(({ element }) => element);
 
-const randomlySelectElements = (array, elementsCount) => {
-  const shuffledArray = shuffleElements(array);
-  return shuffledArray.slice(0, elementsCount);
-};
+const randomlySelectElements = (array, elementsCount) =>
+  shuffleElements(array).slice(0, elementsCount);
 
 export default function Gameboard({ incrementScore, resetScore }) {
   const TOTAL_IDS = 10;
