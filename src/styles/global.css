@@ -14,8 +14,15 @@
   --primary-colour-lighter: #7678ED;
 }
 
+body {
+  background-color: var(--primary-colour);
+  padding: 24px 0;
+  height: 100dvh;
+}
+
 #root {
   max-width: 80dvw;
+  height: 100%;
   margin: 0 auto;
 
   /* flexbox */
@@ -30,7 +37,6 @@ button {
   border: none;
 }
 
-body {
-  background-color: var(--primary-colour);
-  padding: 24px 0;
+main {
+  flex: 1;
 }

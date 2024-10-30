@@ -107,11 +107,8 @@ export default function Gameboard({ incrementScore, resetScore }) {
   ));
 
   return (
-    <>
-      <section className="gameboard">
-        {gameCards}
-        {isLoading && <LoadingScreen />}
-      </section>
-    </>
+    <section className="gameboard">
+      {isLoading ? <LoadingScreen /> : gameCards}
+    </section>
   );
 }
