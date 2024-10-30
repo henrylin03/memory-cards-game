@@ -46,7 +46,7 @@ This project is part of [The Odin Project's](https://www.theodinproject.com/) "F
 
 ## Contributing
 
-If you have a suggestion that would make CV Gen better, please feel free to [add an issue](https://github.com/henrylin03/pokemems/issues/new) and/or fork and create a pull request.
+If you have a suggestion that would make Pokémems better, please feel free to [add an issue](https://github.com/henrylin03/pokemems/issues/new) and/or fork and create a pull request.
 
 <!-- LICENSE -->
 
