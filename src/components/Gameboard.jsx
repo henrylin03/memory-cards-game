@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Card from "./Card";
 import LoadingScreen from "./LoadingScreen";
 import useAllPokemon from "../hooks/useAllPokemon";
@@ -12,7 +13,7 @@ import "../styles/gameboard.css";
 
 const TOTAL_IDS = 10;
 
-export default function Gameboard({ incrementScore, resetScore }) {
+const Gameboard = ({ incrementScore, resetScore }) => {
   const [displayedPokemonIds, setDisplayedPokemonIds] = useState(
     getRandomPokemonIds(TOTAL_IDS)
   );
@@ -93,4 +94,11 @@ export default function Gameboard({ incrementScore, resetScore }) {
       ))}
     </section>
   );
-}
+};
+
+Gameboard.propTypes = {
+  incrementScore: PropTypes.func.isRequired,
+  resetScore: PropTypes.func.isRequired,
+};
+
+export default Gameboard;

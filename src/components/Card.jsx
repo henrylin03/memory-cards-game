@@ -23,6 +23,7 @@ Card.propTypes = {
     name: PropTypes.string,
     imageUrl: PropTypes.string,
   }).isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default Card;
