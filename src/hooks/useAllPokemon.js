@@ -31,12 +31,11 @@ const useAllPokemon = (pokemonIds) => {
         error.message ||
           `An error occurred while fetching Pokemon with id ${id} from PokeAPI`
       );
-    } finally {
-      setIsLoading(false);
     }
   };
 
   useEffect(() => {
+    setIsLoading(true);
     setError(null);
 
     const fetchAllData = async () => {

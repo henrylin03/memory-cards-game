@@ -88,6 +88,7 @@ export default function Gameboard({ incrementScore, resetScore }) {
           key={pokemon.id}
           handleCardSelection={handleCardSelection}
           pokemonData={pokemon}
+          isLoading={isLoading}
         />
       ))}
     </section>
