@@ -14,29 +14,8 @@
   --primary-colour-lighter: #7678ED;
 }
 
-body {
-  background-color: var(--primary-colour);
-  padding: 24px 0;
-  height: 100dvh;
-}
-
-#root {
-  max-width: 80dvw;
-  height: 100%;
-  margin: 0 auto;
-
-  /* flexbox */
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
-}
-
 button {
   cursor: pointer;
   outline: none;
   border: none;
-}
-
-main {
-  flex: 1;
 }

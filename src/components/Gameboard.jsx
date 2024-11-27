@@ -9,7 +9,7 @@ import {
   shuffleElements,
   randomlySelectElements,
 } from "../helpers";
-import "../styles/gameboard.css";
+import styles from "../styles/gameboard.module.css";
 
 const TOTAL_IDS = 10;
 
@@ -21,12 +21,7 @@ const Gameboard = ({ incrementScore, resetScore }) => {
   const { pokemons, error, isLoading } = useAllPokemon(displayedPokemonIds);
 
   //TODO: handle error
-  if (isLoading)
-    return (
-      <section className="gameboard">
-        <LoadingScreen />
-      </section>
-    );
+  if (isLoading) return <LoadingScreen />;
 
   const regeneratePokemonIds = (selectedPokemonId) => {
     const MAX_IDS_OF_POKEMONS_ALREADY_SELECTED = 5;
@@ -83,7 +78,7 @@ const Gameboard = ({ incrementScore, resetScore }) => {
   };
 
   return (
-    <section className="gameboard">
+    <section className={styles.gameboard}>
       {pokemons.map((pokemon) => (
         <Card
           key={pokemon.id}

@@ -1,17 +1,22 @@
 import PropTypes from "prop-types";
-import "../styles/card.css";
+import styles from "../styles/card.module.css";
 
 const Card = ({ handleCardSelection, pokemonData, isLoading }) => {
   return (
     <button
-      className="card"
+      className={styles.card}
       disabled={isLoading}
       onMouseDown={() => handleCardSelection(pokemonData.id)}
+      aria-label={`Select Pokemon, ${pokemonData.name}`}
     >
-      <figure>
-        <img src={pokemonData.imageUrl} alt={`image of ${pokemonData.name}`} />
+      <figure className={styles.imageContainer}>
+        <img
+          src={pokemonData.imageUrl}
+          alt={`image of ${pokemonData.name}`}
+          className={styles.image}
+        />
       </figure>
-      <p>{pokemonData.name}</p>
+      <p className={styles.pokemonName}>{pokemonData.name}</p>
     </button>
   );
 };

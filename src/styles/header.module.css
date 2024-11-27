@@ -1,0 +1,117 @@
+.gameText {
+  font-size: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--secondary-colour);
+}
+
+.left {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  font-weight: normal;
+}
+
+.explanation {
+  font-size: .9rem;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.label {
+  composes: gameText;
+  grid-column: 1 / 2;
+}
+
+.score {
+  composes: gameText;
+  grid-column: 2 / -1;
+  justify-self: end;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 999px) {
+  .gameText {
+    font-size: .8rem;
+  }
+
+  .left {
+    gap: 4px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .explanation {
+    font-size: .8rem;
+  }
+
+  .scoreboard {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 599px) {
+  .gameText {
+    font-size: .68rem;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .explanation {
+    font-size: .55rem;
+  }
+}
+
+@media (max-width: 499px) {
+  .gameText {
+    font-size: .48rem;
+  }
+
+  .heading {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 399px) {
+  .heading {
+    font-size: .88rem;
+  }
+}
+
+/* small mobile screens, landscape */
+@media (max-height: 419px) {
+  .gameText {
+    font-size: .7rem;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .explanation {
+    font-size: .75rem;
+  }
+
+  .score {
+    justify-self: center;
+  }
+}

@@ -1,7 +1,0 @@
-.gameboard {
-  height: 80%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
-  gap: 72px;
-  place-items: center;
-}

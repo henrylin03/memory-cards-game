@@ -35,7 +35,7 @@ Challenge yourself to try and set a new high score!
 
 [![Screenshot](./docs/screenshot.png)](https://poke-mems.netlify.app/)
 
-This project is part of [The Odin Project's](https://www.theodinproject.com/) "Full Stack JavaScript" course. Built in ReactJS, this project focuses on practising React's `useEffect` hook for handling side effects and API calls. All Pokémon IDs, names, and images are fetched from the [PokéAPI](https://pokeapi.co/).
+This project is part of [The Odin Project's](https://www.theodinproject.com/) "Full Stack JavaScript" course. Built in ReactJS, this project focuses on practising React's `useEffect` hook for handling side effects and API calls. All Pokémon IDs, names, and images are fetched from the RESTful [PokéAPI](https://pokeapi.co/).
 
 ### Built with
 

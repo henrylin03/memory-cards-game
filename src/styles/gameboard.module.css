@@ -1,0 +1,34 @@
+.gameboard {
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4% 2%;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 899px) {
+  .gameboard {
+    gap: 4% 2%;
+  }
+}
+
+@media (max-width: 699px) {
+  .gameboard {
+    gap: 2vmin;
+  }
+}
+
+@media (max-width: 599px) {
+  .gameboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1% 2%;
+  }
+}
+
+/* small mobile screens, landscape */
+@media (max-height: 419px) {
+  .gameboard {
+    gap: 2vmin;
+  }
+}
