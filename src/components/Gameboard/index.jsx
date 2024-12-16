@@ -1,15 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Card from "./Card";
-import LoadingScreen from "./LoadingScreen";
-import useAllPokemon from "../hooks/useAllPokemon";
+import Card from "../Card";
+import LoadingScreen from "../LoadingScreen";
+import useAllPokemon from "../../hooks/useAllPokemon";
 import {
   getRandomId,
   getRandomPokemonIds,
   shuffleElements,
   randomlySelectElements,
-} from "../helpers";
-import styles from "../styles/gameboard.module.css";
+} from "../../helpers";
+import styles from "./gameboard.module.css";
 
 const TOTAL_IDS = 10;
 

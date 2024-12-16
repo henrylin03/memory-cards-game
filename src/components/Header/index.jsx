@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../styles/header.module.css";
+import styles from "./header.module.css";
 
 const Header = ({ currentScore, highScore }) => (
   <header className={styles.header}>
@@ -10,7 +10,7 @@ const Header = ({ currentScore, highScore }) => (
       </p>
     </div>
 
-    <article className={styles.scoreboard}>
+    <article className={styles.scoreboard} aria-label="Scoreboard">
       <p className={styles.label}>score:</p>
       <p className={styles.score}>{currentScore}</p>
       <p className={styles.label}>high score:</p>

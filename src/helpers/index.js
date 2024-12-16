@@ -1,6 +1,6 @@
 const getRandomId = (maxId = 150) => Math.floor(Math.random() * maxId + 1);
 
-const getRandomPokemonIds = (totalIds) => {
+const getRandomPokemonIds = (totalIds = 10) => {
   let ids = [];
   for (let i = 0; i < totalIds; i++) {
     let randomId = getRandomId();

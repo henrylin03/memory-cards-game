@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../styles/card.module.css";
+import styles from "./card.module.css";
 
 const Card = ({ handleCardSelection, pokemonData, isLoading }) => {
   return (

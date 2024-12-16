@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Gameboard from "./components/Gameboard";
-import styles from "./styles/app.module.css"
+import styles from "./app.module.css"
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
