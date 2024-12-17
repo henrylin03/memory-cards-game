@@ -62,8 +62,3 @@ describe("Gameboard component", () => {
     ).toBeInTheDocument();
   });
 });
-
-// selecting Pokemon card should update state and regenerate Pokemon displayed
-// selecting previously-selected Pokemon should reset score and board
-// verify error handling logic
-// mock useAllPokemon hook behaviour (simulate various states)

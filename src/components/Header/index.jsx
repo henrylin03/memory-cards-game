@@ -12,9 +12,13 @@ const Header = ({ currentScore, highScore }) => (
 
     <article className={styles.scoreboard} aria-label="Scoreboard">
       <p className={styles.label}>score:</p>
-      <p className={styles.score}>{currentScore}</p>
+      <p className={styles.score} id="currentScore">
+        {currentScore}
+      </p>
       <p className={styles.label}>high score:</p>
-      <p className={styles.score}>{highScore}</p>
+      <p className={styles.score} id="highScore">
+        {highScore}
+      </p>
     </article>
   </header>
 );

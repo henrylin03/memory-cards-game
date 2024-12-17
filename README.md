@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/henrylin03/pokemems">
-    <img src="./public/android-chrome-512x512.png" alt="Logo" width="160" height="160">
+    <img src="./public/android-chrome-512x512.png" alt="Logo" width="100" height="100">
   </a>
 
 <h3 align="center">Pokémems</h3>
@@ -37,9 +37,9 @@ Challenge yourself to try and set a new high score!
 
 This project is part of [The Odin Project's](https://www.theodinproject.com/) "Full Stack JavaScript" course. Built in ReactJS, this project focuses on practising:
 
-1. React's [`useEffect`](https://react.dev/reference/react/useEffect) hook for consuming RESTful APIs - all Pokémon IDs, names, and images are fetched from the RESTful [PokéAPI](https://pokeapi.co/).
+1. React's [`useEffect`](https://react.dev/reference/react/useEffect) hook for consuming RESTful APIs. All Pokémon IDs, names, and images are fetched from the RESTful [PokéAPI](https://pokeapi.co/) using a custom hook [`useAllPokemon`](./src/hooks/useAllPokemon.js).
 2. Styling React applications using [CSS modules](https://github.com/css-modules/css-modules).
-3. Test-driven development (TDD) using [Vitest](https://vitest.dev/) and [React Testing Library (RTL)](https://testing-library.com/docs/react-testing-library/intro/).
+3. Test-driven development (TDD) using [Vitest](https://vitest.dev/) and [React Testing Library (RTL)](https://testing-library.com/docs/react-testing-library/intro/) for unit and component testing, and [Cypress](https://www.cypress.io/) for end-to-end (e2e) testing.
 
 ### Built with
 
@@ -50,6 +50,7 @@ This project is part of [The Odin Project's](https://www.theodinproject.com/) "F
 
 [![Vitest](https://img.shields.io/badge/-Vitest-252529?style=for-the-badge&logo=vitest&logoColor=FCC72B)](https://vitest.dev/)
 [![Testing-Library](https://img.shields.io/badge/-RTL-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)](https://testing-library.com/docs/react-testing-library/intro/)
+[![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)](https://www.cypress.io/)
 
 <!-- CONTRIBUTING -->
 

@@ -6,6 +6,7 @@ const Card = ({ handleCardSelection, pokemonData, isLoading }) => {
     <button
       className={styles.card}
       disabled={isLoading}
+      data-pokemon-id={pokemonData.id}
       onMouseDown={() => handleCardSelection(pokemonData.id)}
       aria-label={`Select Pokemon, ${pokemonData.name}`}
     >
